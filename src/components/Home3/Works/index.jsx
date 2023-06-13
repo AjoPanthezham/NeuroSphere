@@ -18,7 +18,7 @@ const Works = () => {
           <div className="col-lg-7">
             <div className="main-header">
               <h6>Our Portfolio</h6>
-              <h3>Unlimited experience.</h3>
+              <h3>Check out our work.</h3>
             </div>
           </div>
         </div>
@@ -39,12 +39,12 @@ const Works = () => {
               WorksData.works.map((work, index) => (
                 <div className={`col-lg-4 col-md-6 items wow fadeInUp ${work.type}`} data-wow-delay=".4s" key={index}>
                   <div className="item-img imago wow">
-                    <Link href={work.img}>
+                    {/* <Link href={work.img}> */}
                       <a className="popimg">
                         <img src={work.img} alt="image" />
                         <div className="item-img-overlay"></div>
                       </a>
-                    </Link>
+                    {/* </Link> */}
                   </div>
                   <div className="cont">
                     <h6>{ work.title }</h6>

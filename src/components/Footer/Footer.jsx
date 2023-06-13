@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
+import blogs from "../../data/Home1/Blogs.json";
 import appData from '../../data/app.json';
 
 const Footer = ({ classText }) => {
@@ -7,7 +8,7 @@ const Footer = ({ classText }) => {
     <footer className={ classText ? classText : '' }>
       <div className="container">
           <div className="row">
-              <div className="col-lg-4">
+              <div className="col-lg-8">
                   <div className="item md-mb50">
                       <div className="title">
                           <h5>Contact Us</h5>
@@ -16,7 +17,7 @@ const Footer = ({ classText }) => {
                         <li>
                             <span className="icon pe-7s-map-marker"></span>
                             <div className="cont">
-                                <h6>Officeal Address</h6>
+                                <h6>Official Address</h6>
                                 <p>{ appData.address.street } . { appData.address.city }, { appData.address.state } , { appData.address.country }</p>
                             </div>
                         </li>
@@ -37,22 +38,22 @@ const Footer = ({ classText }) => {
                       </ul>
                   </div>
               </div>
-              <div className="col-lg-4">
+              {/* <div className="col-lg-4">
                   <div className="item md-mb50">
                       <div className="title">
-                        <h5>Recent News</h5>
+                        <h5>Recent Articles</h5>
                       </div>
                       <ul>
                           {
-                            appData.footerNews.map((item, index) => {
+                            blogs.slice(0,3).map((item, index) => {
                                 return (
                                     <li key={index}>
                                         <div className="img">
-                                            <img src={item.img} alt="" />
+                                            <img src={item.img} alt={item.title} />
                                         </div>
                                         <div className="sm-post">
                                             <p>{ item.title }</p>
-                                            <span className="date">{ item.date }</span>
+                                            <span className="date">{ item.date}</span>
                                         </div>
                                     </li>
                                 )
@@ -66,7 +67,7 @@ const Footer = ({ classText }) => {
                           </li>
                       </ul>
                   </div>
-              </div>
+              </div> */}
               <div className="col-lg-4">
                   <div className="item">
                       <div className="logo">
@@ -88,10 +89,9 @@ const Footer = ({ classText }) => {
                       </div>
                       <div className="copy-right">
                           <p>
-                              { appData.footerText }{' '}
-                                <Link href="#0">
-                                    <a>{ appData.themeAuthor }</a>
-                                </Link>.
+                              { `© `+new Date().getFullYear()+' '+appData.footerText }{' '}
+                                    { appData.themeAuthor }
+.
                           </p>
                       </div>
                   </div>

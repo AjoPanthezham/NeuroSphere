@@ -6,8 +6,8 @@ import Services from "../../components/Home1/Services";
 import Block from "../../components/Home1/Block";
 import Works from "../../components/Home3/Works";
 import Testimonials from "../../components/Home1/Testimonials";
-import Clients from "../../components/Home1/Clients";
-import Team from "../../components/Home1/Team";
+// import Clients from "../../components/Home1/Clients";
+import Team from "../../components/About/Team";
 import Blogs from "../../components/Home1/Blog";
 
 const Index = () => {
@@ -24,9 +24,9 @@ const Index = () => {
       <Block />
       <Works />
       <Testimonials />
-      <Clients />
+      {/* <Clients /> */}
       <Team />
-      <Blogs />
+      {/* <Blogs /> */}
     </MainLayout>
   )
 }
